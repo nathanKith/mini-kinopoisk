@@ -9,8 +9,10 @@ type Props = {
 
 export const Films = ({ items }: Props) => {
     return (
-        <div className="films">
-            {items.map((item) => <FilmBox {...item}/>)}
+        <div className="films-outer">
+            <div className="films">
+                {items.map((item) => <FilmBox {...item}/>)}
+            </div>
         </div>
     );
 };
