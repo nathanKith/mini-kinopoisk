@@ -16,11 +16,18 @@ export const Films = () => {
 
     const [page, setPage] = React.useState(1);
 
+    const [isLoading, setIsLoading] = React.useState(false);
+
     const handleScroll = () => {
         setPage((p) => p + 1);
     };
 
     React.useEffect(() => {
+        if (isLoading) {
+            return;
+        }
+
+        setIsLoading(true);
         ajax('https://kinopoiskapiunofficial.tech/api/v2.1/films/top', {
             params: {
                 page: page,
@@ -41,6 +48,7 @@ export const Films = () => {
                         return data;
                     });
                 }
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
@@ -48,7 +56,7 @@ export const Films = () => {
     }, [page]);
 
     return (
-        <EndlessScroll hasMore={true} isLoading={false} onReachBottom={handleScroll} className="films-outer">
+        <EndlessScroll hasMore={true} isLoading={isLoading} onReachBottom={handleScroll} className="films-outer">
             {dataFilms.films.map((item) => <FilmBox onClick={(evt: any) => {history.push(urls.FilmCard.create(item.filmId))}} src={item.posterUrl} key={item.filmId}/>)}
         </EndlessScroll>
     );
