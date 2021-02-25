@@ -3,9 +3,9 @@
   flex-shrink: 0;
   width: 15vw;
   height: 40vh;
-  margin-bottom: 2vh;
   cursor: pointer;
   transition: 0.2s;
+  margin: 1vh;
 
   &__img {
     object-fit: cover;

@@ -23,7 +23,7 @@
   }
 
   &__logo {
-    color: $text-logo;
+    color: $white;
     font-size: 4vh;
     font-family: Montserrat-ExtraBoldItalic;
   }
@@ -43,7 +43,7 @@
     border-radius: 50px;
     background-color: $search-background;
     border: $main-background 3px solid;
-    color: $header-text;
+    color: $text;
   }
 
   &__input {
@@ -55,7 +55,7 @@
     border-radius: 50px;
     background-color: transparent;
     border: none;
-    color: $header-text;
+    color: $text;
     font-family: Montserrat-Regular;
   }
 

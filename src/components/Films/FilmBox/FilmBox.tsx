@@ -1,13 +1,14 @@
 import './FilmBox.scss';
 
 type Props = {
-    imgSrc: string,
-}
+    src: string,
+    onClick: (evt: any) => void,
+};
 
-export const FilmBox = ({ imgSrc }: Props) => {
+export const FilmBox = ({onClick, src}: Props) => {
     return (
-        <div className="film-box">
-            <img src={imgSrc} className="film-box__img" alt=""/>
+        <div className="film-box" onClick={onClick}>
+            <img src={src} className="film-box__img" alt=""/>
         </div>
     );
 };
