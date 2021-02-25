@@ -55,7 +55,7 @@ export const FilmCard = (props: any) => {
             .catch((err) => {
                 console.log('Something bad happen while ajax');
             });
-    }, [content.images.backdrops, id]);
+    }, [content.images.backdrops[0].url]);
 
     return (
         <div className="film-card-outer">
