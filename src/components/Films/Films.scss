@@ -1,0 +1,12 @@
+@import "src/styles/colors";
+
+.films-outer {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  background-color: $main-background;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 1vh;
+}

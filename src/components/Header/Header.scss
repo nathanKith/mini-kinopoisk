@@ -1,0 +1,77 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+
+.header {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  background-color: $header-background;
+  justify-content: center;
+}
+
+.header-inner {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-box {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__logo {
+    color: $white;
+    font-size: 4vh;
+    font-family: Montserrat-ExtraBoldItalic;
+  }
+
+  &__search {
+    height: 100%;
+    width: 24%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__search-box {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background-color: $search-background;
+    border: $main-background 3px solid;
+    color: $text;
+  }
+
+  &__input {
+    outline: none;
+    font-size: 2vh;
+    width: 95%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background-color: transparent;
+    border: none;
+    color: $text;
+    font-family: Montserrat-Regular;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__button-img {
+    width: 2.5vh;
+    height: 2.5vh;
+  }
+}
