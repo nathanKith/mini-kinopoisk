@@ -39,26 +39,38 @@ export const FilmCard = (props: any) => {
         }
     });
 
+    const [url, setUrl] = React.useState({
+        "--url": "",
+    });
+
     React.useEffect(() => {
         ajax(`https://kinopoiskapiunofficial.tech/api/v2.1/films/${id}`, {
             params: {
-                append_to_response: 'RATING,POSTERS'
+                append_to_response: 'POSTERS,RATING',
             },
             headers: {
                 'X-API-KEY': 'ab632fee-9bd3-4904-8fdf-4589e142f107',
             }
         })
             .then(({data}) => {
-                setContent((c) => data);
-                document.documentElement.style.setProperty('--url', `url(${content.images.backdrops[0].url})`);
+                setContent(data);
+                console.log(data);
+                setUrl((url) => {
+                    url["--url"] = `url(${content.images.backdrops[0].url})`;
+                    return url;
+                });
+
+                console.log(url);
+                // document.documentElement.style.setProperty('--url', `url(${content.images.backdrops[0].url})`);
             })
             .catch((err) => {
                 console.log('Something bad happen while ajax');
             });
-    }, [content.images.backdrops[0].url]);
+    }, []);
 
     return (
-        <div className="film-card-outer">
+        // @ts-ignore
+        <div className="film-card-outer" style={{...url}}>
             <div className="film-card">
                 <div className="poster">
                     <img className="poster__img" src={content.data.posterUrl} alt=""/>
